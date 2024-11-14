@@ -12,17 +12,31 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
+    [SerializeField] float mouseSensitivity = 100f;
+    float xRotation = 0f;
+    [SerializeField] Transform playerCamera;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        transform.Rotate(Vector3.up * mouseX);
 
         rb.velocity = new Vector3(horizontalInput * 5f, rb.velocity.y, verticalInput * 5f);
+        Vector3 moveDirection = transform.right * horizontalInput + transform.forward * verticalInput;
+        rb.velocity = new Vector3(moveDirection.x * movementSpeed, rb.velocity.y, moveDirection.z * movementSpeed);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {

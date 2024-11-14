@@ -915,6 +915,8 @@ MonoBehaviour:
   ground:
     serializedVersion: 2
     m_Bits: 64
+  mouseSensitivity: 1000
+  playerCamera: {fileID: 963194228}
 --- !u!114 &2080858762
 MonoBehaviour:
   m_ObjectHideFlags: 0
