@@ -18,15 +18,15 @@ public class PlayerLife : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemy Body"))
         {
+            GetComponent<MeshRenderer>().enabled = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<PlayerController>().enabled = false;
             Die(); 
         }
     }
 
     void Die()
     {
-        GetComponent<MeshRenderer>().enabled =  false;
-        GetComponent<Rigidbody>().isKinematic = true;
-        GetComponent<PlayerController>().enabled = false;
         Invoke(nameof(ReloadLevel), 1.3f);
         dead = true;
     }
