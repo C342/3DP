@@ -1,27 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerLife : MonoBehaviour
 {
     bool dead = false;
+    private void Update()
+    {
+        if (transform.position.y < -1f && !dead)
+        {
+            Die();  
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
-        void Update()
-        {
-            if (transform.position.y < -1f && !dead)
-            {
-                Die();
-            }
-        }
-
         if (collision.gameObject.CompareTag("Enemy Body"))
         {
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<PlayerController>().enabled = false;
-            Die(); 
+            Die();
         }
     }
 
@@ -30,6 +31,7 @@ public class PlayerLife : MonoBehaviour
         Invoke(nameof(ReloadLevel), 1.3f);
         dead = true;
     }
+
     void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
