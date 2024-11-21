@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float mouseSensitivity = 100f;
     float xRotation = 0f;
     [SerializeField] Transform playerCamera;
+
+    [SerializeField] AudioSource jumpSound;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -47,6 +49,7 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, 5f, rb.velocity.z);
+        jumpSound.Play();
     }
 
     private void OnCollisionEnter(Collision collision)

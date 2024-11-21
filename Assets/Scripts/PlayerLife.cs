@@ -4,8 +4,11 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.VFX;
 public class PlayerLife : MonoBehaviour
 {
+    [SerializeField] AudioSource spawnCountdown;
+
     bool dead = false;
     private void Update()
     {
