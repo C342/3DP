@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 public class PlayerLife : MonoBehaviour
 {
-    [SerializeField] AudioClip impact;
+   // [SerializeField] AudioClip impact;
 
     bool dead = false;
     private void Update()
@@ -33,7 +33,7 @@ public class PlayerLife : MonoBehaviour
     {
         Invoke(nameof(ReloadLevel), 3.552f);
         dead = true;
-        AudioSource.PlayOneShot(impact, 0.7f);
+        // AudioSource.PlayOneShot(impact, 0.7f);
     }
 
     void ReloadLevel()
