@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 public class PlayerLife : MonoBehaviour
 {
+    [SerializeField] AudioSource deathCountdown;
+
     bool dead = false;
     private void Update()
     {
-        if (transform.position.y < -1f && !dead)
+        if (transform.position.y < -10f && !dead)
         {
             Die();
         }
@@ -31,6 +33,7 @@ public class PlayerLife : MonoBehaviour
     {
         Invoke(nameof(ReloadLevel), 3.552f);
         dead = true;
+        deathCountdown.Play();
     }
 
     void ReloadLevel()
