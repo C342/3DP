@@ -34,6 +34,7 @@ public class PlayerLife : MonoBehaviour
         Invoke(nameof(ReloadLevel), 3.552f);
         dead = true;
         deathCountdown.Play();
+
     }
 
     void ReloadLevel()
