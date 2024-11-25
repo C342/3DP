@@ -296,7 +296,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 544933606}
   - {fileID: 985977857}
-  speed: 5.5
+  speed: 5.75
 --- !u!1001 &289202142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -484,7 +484,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2741595682464004877, guid: c81b9c46669963b49a06003c3037702a, type: 3}
       propertyPath: speed
-      value: 4
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2741595682464004877, guid: c81b9c46669963b49a06003c3037702a, type: 3}
       propertyPath: waypoints.Array.size
@@ -1431,7 +1431,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1351436335}
   - {fileID: 787797948}
-  speed: 2
+  speed: 3
 --- !u!114 &1200305077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,7 +1767,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2741595682464004877, guid: c81b9c46669963b49a06003c3037702a, type: 3}
       propertyPath: speed
-      value: 4
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2741595682464004877, guid: c81b9c46669963b49a06003c3037702a, type: 3}
       propertyPath: waypoints.Array.size
@@ -2807,6 +2807,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2509671155262518299, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5254398510069226861, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
       propertyPath: m_Name
       value: Player
