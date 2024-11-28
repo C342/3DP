@@ -286,7 +286,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2320751820025772518, guid: 28436c05f7413c34c96308bd6fb1f460, type: 3}
       propertyPath: simulationSpeed
-      value: 2
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 2320751820025772518, guid: 28436c05f7413c34c96308bd6fb1f460, type: 3}
       propertyPath: InitialModule.gravitySource
