@@ -1,5 +1,4 @@
-﻿//Some code taken from Unity Skybox-Cubed.shader under the MIT license
-Shader "Galactic Studios/Ultra Skybox Fog"
+﻿Shader "Galactic Studios/Ultra Skybox Fog"
 {
 Properties {
     _Tint ("Tint Colour", Color) = (.5, .5, .5, .5)
