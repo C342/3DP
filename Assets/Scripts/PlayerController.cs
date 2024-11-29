@@ -8,6 +8,7 @@ using UnityEngine.Assertions.Must;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody rb;
+    Animator myAnim;
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float JumpForce = 5f;
 
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] AudioSource jumpSound;
     void Start()
     {
+        myAnim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
@@ -39,11 +41,13 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(horizontalInput * 5f, rb.velocity.y, verticalInput * 5f);
         Vector3 moveDirection = transform.right * horizontalInput + transform.forward * verticalInput;
+        myAnim.SetFloat("Speed", moveDirection.magnitude);
         rb.velocity = new Vector3(moveDirection.x * movementSpeed, rb.velocity.y, moveDirection.z * movementSpeed);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             Jump();
+            myAnim.SetTrigger("Jumped");
         }
     }
 

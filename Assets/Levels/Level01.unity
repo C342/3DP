@@ -876,7 +876,7 @@ RectTransform:
   m_Children:
   - {fileID: 1254146939}
   m_Father: {fileID: 2047286698}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -1.666}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -4516,7 +4516,25 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.45
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9106228284152758789, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
+      propertyPath: m_Height
+      value: 2.6313946
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106228284152758789, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
+      propertyPath: m_Radius
+      value: 0.54050255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106228284152758789, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
+      propertyPath: m_Center.x
+      value: 0.04050267
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106228284152758789, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
+      propertyPath: m_Center.y
+      value: 0.13059996
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6895026201046686882, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
+    - {fileID: 4623314097480295914, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 5953370535977387126, guid: 8daad0011cd3ed241b0175e2899e55e5, type: 3}
