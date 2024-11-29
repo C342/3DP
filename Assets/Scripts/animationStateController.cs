@@ -21,7 +21,7 @@ public class animationStateController : MonoBehaviour
         bool isJumping = animator.GetBool(isJumpingHash);
         bool isWalking = animator.GetBool(isWalkingHash);
         bool forwardPressed = Input.GetKey("w");
-        bool isJumping = Input.GetKey("space");
+        bool JumpPressed = Input.GetKey("space");
         if (!isWalking && forwardPressed)
         {
             animator.SetBool(isWalkingHash, true);
@@ -32,14 +32,14 @@ public class animationStateController : MonoBehaviour
             animator.SetBool(isWalkingHash, false);
         }
         
-        if (!isJumping && (forwardPressed && isJumping))
+        if (!JumpPressed && (forwardPressed && JumpPressed))
         {
             animator.SetBool(isJumpingHash, true);
         }
 
-        if (isJumping && (!forwardPressed || !isJumping))
+        if (JumpPressed && (!forwardPressed || !JumpPressed))
         {
-            animator.SetBool("isWalking", false);
+            animator.SetBool(isJumpingHash, false);
         }
     }
 }
